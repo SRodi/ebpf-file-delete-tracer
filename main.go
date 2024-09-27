@@ -17,7 +17,7 @@ import (
 )
 
 const bpfProgPath = "./trace_file_delete.o"
-
+const memLockLimit = 64 * 1024 * 1024 // 64 MiB
 // main sets up an eBPF program to monitor and prevent file deletions.
 // It performs the following steps:
 // 1. Sets the RLIMIT_MEMLOCK resource limit to allow locking memory for eBPF.
@@ -30,8 +30,8 @@ const bpfProgPath = "./trace_file_delete.o"
 func main() {
 	// Set the RLIMIT_MEMLOCK resource limit
 	var rLimit unix.Rlimit
-	rLimit.Cur = unix.RLIM_INFINITY
-	rLimit.Max = unix.RLIM_INFINITY
+	rLimit.Cur = memLockLimit
+	rLimit.Max = memLockLimit
 	if err := unix.Setrlimit(unix.RLIMIT_MEMLOCK, &rLimit); err != nil {
 		log.Fatalf("Failed to set RLIMIT_MEMLOCK: %v", err)
 	}

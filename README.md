@@ -101,7 +101,7 @@ This Go file sets up an eBPF program to monitor and prevent file deletions. The 
 ### Detailed Steps
 
 1. **Set RLIMIT_MEMLOCK Resource Limit**:
-    - Uses `unix.Setrlimit` to set the RLIMIT_MEMLOCK resource limit to infinity.
+    - Uses `unix.Setrlimit` to set the RLIMIT_MEMLOCK resource limit to memLockLimit which is set to 64 MiB.
 
 2. **Load eBPF Program**:
     - Uses `ebpf.LoadCollectionSpec` to load the eBPF program from the specified ELF file.
