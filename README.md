@@ -3,6 +3,10 @@
 ## Overview
 This project demonstrates the use of eBPF (Extended Berkeley Packet Filter) to trace file deletion events on a Linux system. The eBPF program is loaded from an ELF file and attached to the appropriate kernel hooks to monitor file deletions.
 
+## Demo
+
+[Watch the video](https://srodi.fra1.cdn.digitaloceanspaces.com/demo.MP4) for a short demonstration of this tool in action.
+
 ## Prerequisites
 - Go (version 1.16 or higher)
 - Linux system with eBPF support
