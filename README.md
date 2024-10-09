@@ -15,7 +15,13 @@ This project demonstrates the use of eBPF (Extended Berkeley Packet Filter) to t
 - `bpftool` command-line tool to inspect and manage BPF objects
 
 ## Installation
-1. **Install Go**: Follow the instructions on the [official Go website](https://golang.org/doc/install).
+1. **Install Go**: Follow the instructions on the [official Go website](https://golang.org/doc/install). In Ubuntu/Debian you can also install go as follows:
+    ```sh
+    sudo apt install golang-go
+    echo 'export GOPATH=$HOME/go' >> ~/.profile
+    echo 'export PATH=$GOPATH/bin:$PATH' >> ~/.profile
+    source ~/.profile
+    ```
 2. **Install clang and llvm**:
     ```sh
     sudo apt-get install clang llvm
@@ -137,10 +143,9 @@ We welcome contributions! Please follow these steps:
 6. Create a new Pull Request.
 
 ## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache 2.0 License. See the [LICENSE](LICENSE) file for details.
 
 ---
-
 
 ## Environment set-up on WSL2 - Ubuntu-24.04
 
